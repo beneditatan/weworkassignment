@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/header';
 import ClanWrapper from './components/clan-wrapper';
 import { CLANS } from './constants/clans';
-import ClanStat from './components/clan-stat';
+import VotersWrapper from './components/voters-wrapper';
 
 function App() {
   return (
@@ -15,6 +15,8 @@ function App() {
       <Header size='24' align='left'>Enemies</Header>
       <ClanWrapper clan={CLANS.VUE} />
       <ClanWrapper clan={CLANS.ANGULAR} />
+      <VotersWrapper />
+        
     </div>
   );
 }

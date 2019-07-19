@@ -5,6 +5,7 @@ import { CLANS }  from '../constants/clans'
 import {
     render,
     cleanup,
+    fireEvent
   } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -33,4 +34,25 @@ it('ClanWrapper contains ClanCard', () => {
     const clanCardNode = container.querySelector('ClanCard');
     
     expect(clanCardNode).toBeDefined();
+});
+
+it('ClanWrapper toggles between ClanCard and VotersWrapper', () => {
+  const clan = CLANS.REACT;
+  const { container } = render(<ClanWrapper clan={clan}/>);
+
+  // first click
+  fireEvent.click(container.firstChild)
+  let votersWrapperNode = container.querySelector('VotersWrapper')
+  let clanCardNode = container.querySelector('ClanCard');
+  
+  expect(votersWrapperNode).toBeDefined();
+  expect(clanCardNode).toBeNull();
+
+  // second click
+  fireEvent.click(container.firstChild)
+  votersWrapperNode = container.querySelector('VotersWrapper')
+  clanCardNode = container.querySelector('ClanCard');
+
+  expect(clanCardNode).toBeDefined();
+  expect(votersWrapperNode).toBeNull();
 });

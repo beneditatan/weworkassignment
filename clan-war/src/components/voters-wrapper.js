@@ -19,6 +19,36 @@ class VotersWrapper extends Component {
                 <div className='col-md-4'>
                     <ClanVoter />
                 </div>
+                <div className='col-md-4'>
+                    <ClanVoter />
+                </div>
+                <div className='col-md-4'>
+                    <ClanVoter />
+                </div>
+                <div className='col-md-4'>
+                    <ClanVoter />
+                </div>
+                <div className='col-md-4'>
+                    <ClanVoter />
+                </div>
+                <div className='col-md-4'>
+                    <ClanVoter />
+                </div>
+                <div className='col-md-4'>
+                    <ClanVoter />
+                </div>
+                <div className='col-md-4'>
+                    <ClanVoter />
+                </div>
+                <div className='col-md-4'>
+                    <ClanVoter />
+                </div>
+                <div className='col-md-4'>
+                    <ClanVoter />
+                </div>
+                <div className='col-md-4'>
+                    <ClanVoter />
+                </div>
             </div>
         )
     }

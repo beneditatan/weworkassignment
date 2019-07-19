@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { CLANS_IMAGE } from '../constants/clans'
 
 class ClanImage extends Component {
     constructor(props) {
@@ -18,9 +18,14 @@ class ClanImage extends Component {
             'margin-right': '5px',
         }
 
+        const imgStyle = {
+            'max-width': '100%',
+            'max-height': '100%'
+        }
+
         return (
             <div style={divStyle}>
-                {this.props.clan.toUpperCase()} Image Here
+                <img src={CLANS_IMAGE[this.props.clan]} style={imgStyle}></img>
             </div>
         )
     }

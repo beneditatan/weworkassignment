@@ -8,6 +8,8 @@ import {
   } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
+afterEach(cleanup);
+
 it('ClanCard renders without crashing', () => {
   const div = document.createElement('div');
   const clan = CLANS.REACT;

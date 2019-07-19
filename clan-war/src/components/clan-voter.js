@@ -10,12 +10,16 @@ class ClanVoter extends Component {
     render (){
 
         return (
-            <div className='row'>
-                <div className='col-md-4'>
-                    <VoterImage />
+            <div>
+                <div className='row'>
+                    <div className='col-md-4 offset-4' align='center'>
+                        <VoterImage />
+                    </div>
                 </div>
-                <div className='col-md-8'>
-                    <h5>voter name</h5>
+                <div className='row'>
+                    <div className='col-md-12' align='center'>
+                        <h5>voter name</h5>
+                    </div>
                 </div>
             </div>
         )
