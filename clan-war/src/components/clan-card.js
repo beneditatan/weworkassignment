@@ -13,11 +13,16 @@ class ClanCard extends Component {
             'border': '1px',
             'border-style': 'solid',
             'margin-left': '10px',
-            'margin-right': '10px'
+            'margin-right': '10px',
+            'background-color': '#F1F2EB'
         }
 
         const titleStyle = {
-            'margin-top': '5px'
+            'margin-top': '5px',
+        }
+
+        const fontStyle = {
+            'color': '#4A4A48'
         }
 
         return (
@@ -26,7 +31,7 @@ class ClanCard extends Component {
                     <div className='col-md-1'>
                         <ClanImage clan={this.props.clan} />
                     </div>
-                    <div className='col-md-11' align='left'>
+                    <div className='col-md-11' align='left' style={fontStyle}>
                         <div className='row'>
                             <h3>{this.props.clan.toUpperCase()}</h3>
                         </div>
