@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 import Header from '../components/header';
 import {
     render,
-    fireEvent,
     cleanup,
-    waitForElement,
   } from '@testing-library/react';
-  import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 
 afterEach(cleanup);
 

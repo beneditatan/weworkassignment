@@ -7,10 +7,14 @@ class ClanWrapper extends Component {
     }
 
     render () {
+        const divStyle = {
+            'text-align': 'left'
+        }
+
         return (
-            <div className='col-md-12'>
-                {this.props.children}
-                <ClanCard />
+            <div className='col-md-12' style={divStyle} data-testid='div-wrapper'>
+                {this.props.clan.toUpperCase()} Here
+                <ClanCard clan={this.props.clan} data-testid='clan-card'/>
             </div>
         )
     }
