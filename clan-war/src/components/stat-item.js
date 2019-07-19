@@ -7,7 +7,7 @@ class StatItem extends Component {
 
     render () {
         return (
-            <div>
+            <div align='center'>
                 <p>StatItem here</p>
             </div>
         )

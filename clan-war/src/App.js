@@ -6,6 +6,8 @@ import ClanWrapper from './components/clan-wrapper';
 import { CLANS } from './constants/clans';
 import VotersWrapper from './components/voters-wrapper';
 
+
+
 function App() {
   return (
     <div className="App">
@@ -16,7 +18,6 @@ function App() {
       <ClanWrapper clan={CLANS.VUE} />
       <ClanWrapper clan={CLANS.ANGULAR} />
       <VotersWrapper />
-        
     </div>
   );
 }
