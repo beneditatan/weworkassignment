@@ -7,8 +7,8 @@ class StatItem extends Component {
 
     render () {
         return (
-            <div className='col-md-3'>
-                StatItem here
+            <div>
+                <p>StatItem here</p>
             </div>
         )
     }

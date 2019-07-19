@@ -37,7 +37,9 @@ class ClanCard extends Component {
                     
                 </div>
                 <div className='row'>
-                    <ClanStat />
+                    <div className='col-md-12'>
+                        <ClanStat />
+                    </div>
                 </div>
             </div>
 
