@@ -1,24 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import Header from './components/header'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header size='48' align='center'>React War Room</Header>
+      <Header size='24' align='left'>Allies</Header>
+      <div className='wrapper col-md-12' id='react-wrapper' align='left'>
+        React here
+      </div>
+      <Header size='24' align='left'>Enemies</Header>
+      <div className='wrapper col-md-12' id='vue-wrapper' align='left'>
+        Vue here
+      </div>
+      <div className='wrapper col-md-12' id='angular-wrapper' align='left'>
+        Angular here
+      </div>
     </div>
   );
 }
