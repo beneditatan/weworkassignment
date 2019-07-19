@@ -8,7 +8,7 @@ class StatItem extends Component {
     render () {
         return (
             <div align='center'>
-                <p>StatItem here</p>
+                <p>{this.props.value} {this.props.unit}</p>
             </div>
         )
     }

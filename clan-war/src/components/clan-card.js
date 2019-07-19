@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ClanStat from './clan-stat'
+import ClanStat from '../containers/clan-stat'
 import ClanImage from './clan-image'
 import { CLANS_DESCRIPTION } from '../constants/clans';
 
@@ -11,14 +11,14 @@ class ClanCard extends Component {
     render () {
         const divStyle = {
             'border': '1px',
-            'border-style': 'solid',
-            'margin-left': '10px',
-            'margin-right': '10px',
-            'background-color': '#F1F2EB'
+            'borderStyle': 'solid',
+            'marginLeft': '10px',
+            'marginRight': '10px',
+            'backgroundColor': '#F1F2EB'
         }
 
         const titleStyle = {
-            'margin-top': '5px',
+            'marginTop': '5px',
         }
 
         const fontStyle = {
@@ -28,10 +28,10 @@ class ClanCard extends Component {
         return (
             <div style={divStyle}>
                 <div className='row' style={titleStyle}>
-                    <div className='col-md-1'>
+                    <div className='col-md-2'>
                         <ClanImage clan={this.props.clan} />
                     </div>
-                    <div className='col-md-11' align='left' style={fontStyle}>
+                    <div className='col-md-10' align='left' style={fontStyle}>
                         <div className='row'>
                             <h3>{this.props.clan.toUpperCase()}</h3>
                         </div>
@@ -43,7 +43,7 @@ class ClanCard extends Component {
                 </div>
                 <div className='row'>
                     <div className='col-md-12'>
-                        <ClanStat />
+                        <ClanStat clan={this.props.clan}/>
                     </div>
                 </div>
             </div>

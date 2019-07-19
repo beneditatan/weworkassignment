@@ -9,12 +9,22 @@ import {
   } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from '../reducers';
+import ReduxPromise from 'redux-promise';
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+
 afterEach(cleanup);
 
 it('ClanWrapper renders without crashing', () => {
     const clan = CLANS.REACT;
   const div = document.createElement('div');
-  ReactDOM.render(<ClanWrapper clan={clan}/>, div);
+  ReactDOM.render(
+    <Provider store={createStoreWithMiddleware(rootReducer)}>
+      <ClanWrapper clan={clan}/>
+    </Provider>
+    , div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -22,15 +32,21 @@ it('ClanWrapper rendered with the correct styling', () => {
     const clan = CLANS.REACT;
     const align = 'left';
     const marginTop = '10px'
-    const { container } = render(<ClanWrapper clan={clan}/>);
+    const { container } = render(
+      <Provider store={createStoreWithMiddleware(rootReducer)}>
+        <ClanWrapper clan={clan}/>
+      </Provider>);
 
-    expect(container.firstChild).toHaveStyle(`text-align: ${align};`);
-    expect(container.firstChild).toHaveStyle(`margin-top: ${marginTop};`);
+    expect(container.firstChild).toHaveStyle(`textAlign: ${align};`);
+    expect(container.firstChild).toHaveStyle(`marginTop: ${marginTop};`);
 });
 
 it('ClanWrapper contains ClanCard', () => {
     const clan = CLANS.REACT;
-    const { container } = render(<ClanWrapper clan={clan}/>);
+    const { container } = render(
+      <Provider store={createStoreWithMiddleware(rootReducer)}>
+        <ClanWrapper clan={clan}/>
+      </Provider>);
     const clanCardNode = container.querySelector('ClanCard');
     
     expect(clanCardNode).toBeDefined();
@@ -38,7 +54,10 @@ it('ClanWrapper contains ClanCard', () => {
 
 it('ClanWrapper toggles between ClanCard and VotersWrapper', () => {
   const clan = CLANS.REACT;
-  const { container } = render(<ClanWrapper clan={clan}/>);
+  const { container } = render(
+    <Provider store={createStoreWithMiddleware(rootReducer)}>
+      <ClanWrapper clan={clan}/>
+    </Provider>);
 
   // first click
   fireEvent.click(container.firstChild)

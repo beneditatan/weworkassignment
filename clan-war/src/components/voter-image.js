@@ -12,10 +12,10 @@ class VoterImage extends Component {
             'height': '100px',
             'overflow': 'hidden',
             'border': '1px',
-            'border-style': 'solid',
-            'margin-top': '5px',
-            'margin-left': '5px',
-            'margin-right': '5px',
+            'borderStyle': 'solid',
+            'marginTop': '5px',
+            'marginLeft': '5px',
+            'marginRight': '5px',
         }
 
         return (

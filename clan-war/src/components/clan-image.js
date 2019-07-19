@@ -13,15 +13,15 @@ class ClanImage extends Component {
             'overflow': 'hidden',
             // 'border': '1px',
             // 'border-style': 'solid',
-            'margin-top': '5px',
-            'margin-left': '5px',
-            'margin-right': '5px',
+            'marginTop': '5px',
+            'marginLeft': '5px',
+            'marginRight': '5px',
             // 'background-color': '#4A4A48'
         }
 
         const imgStyle = {
-            'max-width': '90%',
-            'max-height': '90%'
+            'maxWidth': '90%',
+            'maxHeight': '90%'
         }
 
         return (

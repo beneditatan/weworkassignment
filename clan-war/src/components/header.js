@@ -15,10 +15,10 @@ class Header extends Component {
         const { size, align, children } = this.props;
         
         const divStyle = {
-            'font-size': `${size}px`,
-            'text-align': `${align}`,
-            'margin-top': `20px`,
-            'margin-left': '1px'
+            'fontSize': `${size}px`,
+            'textAlign': `${align}`,
+            'marginTop': `20px`,
+            'marginLeft': '1px'
         };
 
         return (

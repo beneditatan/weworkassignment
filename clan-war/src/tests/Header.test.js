@@ -26,10 +26,10 @@ it('header renders with correct styling', async () => {
     )
 
     expect(container).toHaveTextContent(text)
-    expect(container.firstChild).toHaveStyle(`font-size: ${size}px;`)
-    expect(container.firstChild).toHaveStyle(`text-align: ${align};`)
-    expect(container.firstChild).toHaveStyle(`margin-top: ${marginTop};`)
-    expect(container.firstChild).toHaveStyle(`margin-left: ${marginLeft};`)
+    expect(container.firstChild).toHaveStyle(`fontSize: ${size}px;`)
+    expect(container.firstChild).toHaveStyle(`textAlign: ${align};`)
+    expect(container.firstChild).toHaveStyle(`marginTop: ${marginTop};`)
+    expect(container.firstChild).toHaveStyle(`marginLeft: ${marginLeft};`)
 
 });
 

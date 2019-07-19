@@ -21,8 +21,8 @@ class ClanWrapper extends Component {
 
     render () {
         const divStyle = {
-            'text-align': 'left',
-            'margin-top': '10px'
+            'textAlign': 'left',
+            'marginTop': '10px'
         }
 
         return (

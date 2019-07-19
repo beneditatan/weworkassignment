@@ -8,12 +8,22 @@ import {
   } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from '../reducers';
+import ReduxPromise from 'redux-promise';
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+
 afterEach(cleanup);
 
 it('ClanImage renders without crashing', () => {
   const div = document.createElement('div');
   const clan = CLANS.REACT;
-  ReactDOM.render(<ClanImage clan={clan}/>, div);
+  ReactDOM.render(
+    <Provider store={createStoreWithMiddleware(rootReducer)}>
+      <ClanImage clan={clan}/>
+    </Provider>
+    , div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -24,7 +34,10 @@ it('ClanImage rendered with the correct styling', () => {
   const marginTop = '5px';
   const marginLeft = '5px';
   const marginRight = '5px';
-  const { container } = render(<ClanImage clan={clan}/>);
+  const { container } = render(
+    <Provider store={createStoreWithMiddleware(rootReducer)}>
+      <ClanImage clan={clan}/>
+    </Provider>);
 
   // make sure its square
   // const height = container.firstChild.offsetWidth;
@@ -32,7 +45,7 @@ it('ClanImage rendered with the correct styling', () => {
   expect(container.firstChild).toHaveStyle(`width: ${width};`);
   // expect(container.firstChild).toHaveStyle(`height: ${height};`);
   expect(container.firstChild).toHaveStyle(`overflow: ${overflow};`);
-  expect(container.firstChild).toHaveStyle(`margin-top: ${marginTop};`);
-  expect(container.firstChild).toHaveStyle(`margin-left: ${marginLeft};`);
-  expect(container.firstChild).toHaveStyle(`margin-right: ${marginRight};`);
+  expect(container.firstChild).toHaveStyle(`marginTop: ${marginTop};`);
+  expect(container.firstChild).toHaveStyle(`marginTop: ${marginLeft};`);
+  expect(container.firstChild).toHaveStyle(`marginTop: ${marginRight};`);
 });
