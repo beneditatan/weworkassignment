@@ -19,7 +19,8 @@ it('header renders with correct styling', async () => {
     const text = 'hi'
     const size = '48'
     const align = 'left'
-    const marginTop = '20'
+    const marginTop = '20px'
+    const marginLeft = '1px'
     const { container } = render(
         <Header size={size} align={align}>{text}</Header>
     )
@@ -27,7 +28,8 @@ it('header renders with correct styling', async () => {
     expect(container).toHaveTextContent(text)
     expect(container.firstChild).toHaveStyle(`font-size: ${size}px;`)
     expect(container.firstChild).toHaveStyle(`text-align: ${align};`)
-    expect(container.firstChild).toHaveStyle(`margin-top: ${marginTop}px;`)
+    expect(container.firstChild).toHaveStyle(`margin-top: ${marginTop};`)
+    expect(container.firstChild).toHaveStyle(`margin-left: ${marginLeft};`)
 
 });
 

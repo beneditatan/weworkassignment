@@ -13,8 +13,7 @@ class ClanWrapper extends Component {
         }
 
         return (
-            <div className='col-md-12' style={divStyle} data-testid='div-wrapper'>
-                {this.props.clan.toUpperCase()} Here
+            <div style={divStyle} data-testid='div-wrapper'>
                 <ClanCard clan={this.props.clan} data-testid='clan-card'/>
             </div>
         )

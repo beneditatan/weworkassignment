@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ClanWrapper from '../components/clan-wrapper';
-import CLANS from '../constants/clans'
+import { CLANS }  from '../constants/clans'
 import {
     render,
     cleanup,

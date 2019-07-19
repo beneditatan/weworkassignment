@@ -15,10 +15,11 @@ class ClanImage extends Component {
             'border-style': 'solid',
             'margin-top': '5px',
             'margin-left': '5px',
+            'margin-right': '5px',
         }
 
         return (
-            <div className='col-md-1' style={divStyle}>
+            <div style={divStyle}>
                 {this.props.clan.toUpperCase()} Image Here
             </div>
         )

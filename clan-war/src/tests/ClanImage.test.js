@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ClanImage from '../components/clan-image';
-import CLANS from '../constants/clans'
+import { CLANS }  from '../constants/clans'
 import {
     render,
     cleanup,
@@ -23,6 +23,7 @@ it('ClanImage rendered with the correct styling', () => {
   const overflow = 'hidden';
   const marginTop = '5px';
   const marginLeft = '5px';
+  const marginRight = '5px';
   const { container } = render(<ClanImage clan={clan}/>);
 
   // make sure its square
@@ -33,4 +34,5 @@ it('ClanImage rendered with the correct styling', () => {
   expect(container.firstChild).toHaveStyle(`overflow: ${overflow};`);
   expect(container.firstChild).toHaveStyle(`margin-top: ${marginTop};`);
   expect(container.firstChild).toHaveStyle(`margin-left: ${marginLeft};`);
+  expect(container.firstChild).toHaveStyle(`margin-right: ${marginRight};`);
 });

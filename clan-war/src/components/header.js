@@ -17,12 +17,13 @@ class Header extends Component {
         const divStyle = {
             'font-size': `${size}px`,
             'text-align': `${align}`,
-            'margin-top': `20px`
+            'margin-top': `20px`,
+            'margin-left': '1px'
         };
 
         return (
-            <div className='col-md-12' style={divStyle}>
-                {children}
+            <div className='row' style={divStyle}>
+                <div className='col-md-12'>{children}</div>
             </div>
         );
     }
