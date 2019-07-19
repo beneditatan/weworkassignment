@@ -9,10 +9,12 @@ class ClanStat extends Component {
     render () {
         return (
             <div className='col-md-12'>
-                <StatItem />
-                <StatItem />
-                <StatItem />
-                <StatItem />
+                <div className='row'>
+                    <StatItem />
+                    <StatItem />
+                    <StatItem />
+                    <StatItem />
+                </div>
             </div>
         )
     }

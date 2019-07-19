@@ -2,12 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ClanWrapper from '../components/clan-wrapper';
 import CLANS from '../constants/clans'
-
 import {
     render,
-    fireEvent,
     cleanup,
-    waitForElement,
   } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -23,9 +20,11 @@ it('ClanWrapper renders without crashing', () => {
 it('ClanWrapper rendered with the correct styling', () => {
     const clan = CLANS.REACT;
     const align = 'left';
+    const marginTop = '10px'
     const { container } = render(<ClanWrapper clan={clan}/>);
 
     expect(container.firstChild).toHaveStyle(`text-align: ${align};`);
+    expect(container.firstChild).toHaveStyle(`margin-top: ${marginTop};`);
 });
 
 it('ClanWrapper contains ClanCard', () => {

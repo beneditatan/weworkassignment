@@ -7,8 +7,13 @@ class ClanCard extends Component {
     }
 
     render () {
+        const divStyle = {
+            'border': '1px',
+            'border-style': 'solid'
+        }
+        
         return (
-            <div className='col-md-12'>
+            <div className='col-md-12' style={divStyle}>
                 <ClanStat />
             </div>
         )
