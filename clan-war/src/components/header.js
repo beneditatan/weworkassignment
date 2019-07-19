@@ -16,7 +16,8 @@ class Header extends Component {
         
         const divStyle = {
             'font-size': `${size}px`,
-            'text-align': `${align}`
+            'text-align': `${align}`,
+            'margin-top': `20px`
         };
 
         return (
