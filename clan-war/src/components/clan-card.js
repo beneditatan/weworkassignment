@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ClanStat from './clan-stat'
+import ClanImage from './clan-image'
 
 class ClanCard extends Component {
     constructor(props){
@@ -11,9 +12,12 @@ class ClanCard extends Component {
             'border': '1px',
             'border-style': 'solid'
         }
-        
+
         return (
             <div className='col-md-12' style={divStyle}>
+                <div className='row'>
+                    <ClanImage clan={this.props.clan} />
+                </div>
                 <ClanStat />
             </div>
         )

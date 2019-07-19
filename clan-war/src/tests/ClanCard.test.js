@@ -10,7 +10,8 @@ import '@testing-library/jest-dom/extend-expect';
 
 it('ClanCard renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<ClanCard />, div);
+  const clan = CLANS.REACT;
+  ReactDOM.render(<ClanCard clan={clan}/>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -22,4 +23,20 @@ it('ClanCard rendered with the correct styling', () => {
 
   expect(container.firstChild).toHaveStyle(`border: ${border};`);
   expect(container.firstChild).toHaveStyle(`border-style: ${borderStyle};`);
+});
+
+it('ClanCard contains ClanStat', () => {
+  const clan = CLANS.REACT;
+  const { container } = render(<ClanCard clan={clan}/>);
+  const clanStatNode = container.querySelector('ClanStat');
+  
+  expect(clanStatNode).toBeDefined();
+});
+
+it('ClanCard contains ClanImage', () => {
+  const clan = CLANS.REACT;
+  const { container } = render(<ClanCard clan={clan}/>);
+  const clanImageNode = container.querySelector('ClanImage');
+  
+  expect(clanImageNode).toBeDefined();
 });
