@@ -11,6 +11,19 @@ import { fetchReactStargazers,  fetchVueStargazers, fetchAngularStargazers} from
 
 
 class App extends Component {
+  constructor(props){
+    super(props);
+
+    this.handleScroll = this.handleScroll.bind(this)
+    
+  }
+
+  handleScroll(){
+    console.log('hics')
+    if(this.scroller){
+        console.log(this.scroller.scrollTop)
+    }
+  }
   componentDidMount(){
     // switch case
     this.props.fetchReactStargazers(this.props.reactStargazers.page);

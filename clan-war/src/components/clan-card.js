@@ -7,7 +7,22 @@ import { CLANS_DESCRIPTION } from '../constants/clans';
 class ClanCard extends Component {
     constructor(props){
         super(props);
+
+        this.state = {
+            overview: true
+        }
+
+        this.toggleOverview = this.toggleOverview.bind(this)
+       
     }
+    
+    toggleOverview() {
+        this.setState(state => ({
+            overview: !state.overview
+        }));
+    }
+
+    
 
     render () {
         const divStyle = {
@@ -27,14 +42,15 @@ class ClanCard extends Component {
         }
 
         return (
-            <div style={divStyle}>
+            <div style={divStyle}
+            >
                 <div className='row' style={titleStyle}>
                     <div className='col-md-2'>
                         <ClanImage clan={this.props.clan} />
                     </div>
                     <div className='col-md-10' align='left' style={fontStyle}>
                         <div className='row'>
-                            <h3>{this.props.clan.toUpperCase()}</h3>
+                            <h3  onClick={this.toggleOverview}>{this.props.clan.toUpperCase()}</h3>
                         </div>
                         <div className='row'>
                             <span>{CLANS_DESCRIPTION[this.props.clan]}</span>
@@ -42,11 +58,14 @@ class ClanCard extends Component {
                     </div>
                     
                 </div>
-                <div className='row' hidden={this.props.overview}>
-                    <div className='col-md-12'>
-                        <VotersWrapper clan={this.props.clan} clanStargazers={this.props.clanStargazers}/>
-                    </div>
-                </div>
+                {!this.state.overview ?
+                    <div className='row'>
+                        <div className='col-md-12'>
+                            <VotersWrapper clan={this.props.clan} clanStargazers={this.props.clanStargazers}/>
+                        </div>
+                    </div> : null
+                }
+                
                 <div className='row'>
                     <div className='col-md-12'>
                         <ClanStat clan={this.props.clan}/>

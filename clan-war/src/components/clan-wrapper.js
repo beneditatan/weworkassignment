@@ -6,28 +6,21 @@ class ClanWrapper extends Component {
     constructor(props){
         super(props);
 
-        this.state = {
-            overview: true
-        }
-
-        this.toggleOverview = this.toggleOverview.bind(this)
+        
+        
     }
 
-    toggleOverview() {
-        this.setState(state => ({
-            overview: !state.overview
-        }));
-    }
+   
 
     render () {
         const divStyle = {
             'textAlign': 'left',
-            'marginTop': '10px'
+            'marginTop': '10px',
         }
         return (
-            <div style={divStyle} data-testid='div-wrapper' onClick={this.toggleOverview}>
+            <div style={divStyle} data-testid='div-wrapper' >
                 <ClanCard clan={this.props.clan}
-                data-testid='clan-card' overview={this.state.overview}
+                data-testid='clan-card'
                 clanStargazers={this.props.clanStargazers}
                 />
             </div>
