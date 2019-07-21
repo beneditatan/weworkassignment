@@ -15,6 +15,8 @@ import rootReducer from '../reducers';
 import ReduxPromise from 'redux-promise';
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
+afterEach(cleanup);
+
 it('ClanStat renders without crashing', () => {
   const div = document.createElement('div');
   const clan = CLANS.REACT;
@@ -28,12 +30,12 @@ it('ClanStat renders without crashing', () => {
 
 it('ClanStat renders with 3 StatItems', () => {
   const clan = CLANS.REACT;
-  const { container } = render(
+  const { getAllByTestId } = render(
     <Provider store={createStoreWithMiddleware(rootReducer)}>
       <ClanStat clan={clan}/>
     </Provider>);
 
-  const statItemNodes = container.querySelectorAll('StatItem');
+  const statItemNodes = getAllByTestId('stat-item');
 
   expect(statItemNodes.length).toBe(3)
 });

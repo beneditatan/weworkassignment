@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
 import ClanCard from './clan-card'
-import VotersWrapper from './voters-wrapper'
 
 class ClanWrapper extends Component {
-    constructor(props){
-        super(props);
-
-        
-        
-    }
-
-   
-
     render () {
         const divStyle = {
             'textAlign': 'left',

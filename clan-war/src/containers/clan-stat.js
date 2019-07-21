@@ -29,36 +29,28 @@ class ClanStat extends Component {
                 break;
             default:
                 console.log("invalid clan")
+                var clanStat = {
+                    stargazers_count: 0,
+                    forks_count: 0,
+                    open_issues_count: 0
+                }
                 break;
         }
         
 
         return (
             <div className='row'>
-                <div className='col-md-4'>
+                <div className='col-md-4' data-testid='stat-item'>
                     <StatItem value={clanStat.stargazers_count} 
-                    unit="Stargazer(s)"/>
+                    unit="Stargazer(s)" />
                 </div>
-                <div className='col-md-4'>
+                <div className='col-md-4' data-testid='stat-item'>
                     <StatItem value={clanStat.forks_count} unit="Fork(s)"/>
                 </div>
-                <div className='col-md-4'>
+                <div className='col-md-4' data-testid='stat-item'>
                     <StatItem value={clanStat.open_issues_count} unit="Open Issue(s)"/>
                 </div>
             </div>
-
-            // <div className='row'>
-            //     <div className='col-md-4'>
-            //         <StatItem value={0} 
-            //         unit="Stargazer(s)"/>
-            //     </div>
-            //     <div className='col-md-4'>
-            //         <StatItem value={0} unit="Fork(s)"/>
-            //     </div>
-            //     <div className='col-md-4'>
-            //         <StatItem value={0} unit="Open Issue(s)"/>
-            //     </div>
-            // </div>
         )
     }
 }

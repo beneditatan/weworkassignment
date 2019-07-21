@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ClanStat from '../containers/clan-stat'
 import ClanImage from './clan-image'
-import VotersWrapper from './voters-wrapper'
+import VotersWrapper from '../containers/voters-wrapper'
 import { CLANS_DESCRIPTION } from '../constants/clans';
 
 class ClanCard extends Component {
@@ -21,8 +21,6 @@ class ClanCard extends Component {
             overview: !state.overview
         }));
     }
-
-    
 
     render () {
         const divStyle = {
@@ -50,7 +48,8 @@ class ClanCard extends Component {
                     </div>
                     <div className='col-md-10' align='left' style={fontStyle}>
                         <div className='row'>
-                            <h3  onClick={this.toggleOverview}>{this.props.clan.toUpperCase()}</h3>
+                            <h3 data-testid='title-click' 
+                            onClick={this.toggleOverview}>{this.props.clan.toUpperCase()}</h3>
                         </div>
                         <div className='row'>
                             <span>{CLANS_DESCRIPTION[this.props.clan]}</span>

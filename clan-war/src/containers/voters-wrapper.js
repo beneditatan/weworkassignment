@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ClanVoter from './clan-voter'
+import ClanVoter from '../components/clan-voter'
 import { CLANS } from '../constants/clans'
 import _ from 'lodash';
 import { connect } from 'react-redux';
@@ -39,7 +39,7 @@ class VotersWrapper extends Component {
 
     generateItems(stargazers){
         const items = _.map(stargazers, (gazer, index) => 
-            <div className='col-md-4' key={index}>
+            <div className='col-md-4' key={index} data-testid='clan-voter'>
                 <ClanVoter key={index} 
                     imgSrc={gazer.avatar_url}
                     login={gazer.login}

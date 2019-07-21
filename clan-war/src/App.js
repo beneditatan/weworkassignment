@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import Header from './components/header';
 import ClanWrapper from './components/clan-wrapper';
 import { CLANS } from './constants/clans';
-import VotersWrapper from './components/voters-wrapper';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchReactStargazers,  fetchVueStargazers, fetchAngularStargazers} from './actions';
@@ -19,13 +18,12 @@ class App extends Component {
   }
 
   handleScroll(){
-    console.log('hics')
     if(this.scroller){
         console.log(this.scroller.scrollTop)
     }
   }
+
   componentDidMount(){
-    // switch case
     this.props.fetchReactStargazers(this.props.reactStargazers.page);
     this.props.fetchVueStargazers(this.props.vueStargazers.page);
     this.props.fetchAngularStargazers(this.props.angularStargazers.page);
@@ -41,7 +39,6 @@ class App extends Component {
         <Header size='24' align='left'>Enemies</Header>
         <ClanWrapper clan={CLANS.VUE} clanStargazers={this.props.vueStargazers}/>
         <ClanWrapper clan={CLANS.ANGULAR} clanStargazers={this.props.angularStargazers}/>
-        {/* <VotersWrapper clan={CLANS.REACT}/> */}
       </div>
     );
   }

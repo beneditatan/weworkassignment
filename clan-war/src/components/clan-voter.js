@@ -3,10 +3,6 @@ import VoterImage from './voter-image'
 
 
 class ClanVoter extends Component {
-    constructor(props) {
-        super(props)
-    }
-
     render (){
         const divStyle = {
             marginBottom: '20px',
