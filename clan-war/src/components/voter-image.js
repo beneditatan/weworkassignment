@@ -11,16 +11,21 @@ class VoterImage extends Component {
             'width': '100%',
             'height': '100px',
             'overflow': 'hidden',
-            'border': '1px',
-            'borderStyle': 'solid',
+            // 'border': '1px',
+            // 'borderStyle': 'solid',
             'marginTop': '5px',
             'marginLeft': '5px',
             'marginRight': '5px',
         }
 
+        const imgStyle = {
+            'maxWidth': '100%',
+            'maxHeight': '100%'
+        }
+
         return (
             <div style={divStyle}>
-                Voter Image Here
+                <img src={this.props.imgSrc} style={imgStyle}></img>
             </div>
         )
     }

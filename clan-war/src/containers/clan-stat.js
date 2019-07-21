@@ -11,21 +11,9 @@ class ClanStat extends Component {
     }
 
     componentDidMount(){
-        switch(this.props.clan){
-            case CLANS.REACT:
-                this.props.fetchReactStat();
-                break;
-            case CLANS.VUE:
-                this.props.fetchVueStat();
-                break;
-            case CLANS.ANGULAR:
-                this.props.fetchAngularStat();
-                break;
-            default:
-                console.log("invalid clan")
-                break;
-        }
-        
+        this.props.fetchReactStat();
+        this.props.fetchVueStat();
+        this.props.fetchAngularStat();
     }
     
     render () {
@@ -58,6 +46,19 @@ class ClanStat extends Component {
                     <StatItem value={clanStat.open_issues_count} unit="Open Issue(s)"/>
                 </div>
             </div>
+
+            // <div className='row'>
+            //     <div className='col-md-4'>
+            //         <StatItem value={0} 
+            //         unit="Stargazer(s)"/>
+            //     </div>
+            //     <div className='col-md-4'>
+            //         <StatItem value={0} unit="Fork(s)"/>
+            //     </div>
+            //     <div className='col-md-4'>
+            //         <StatItem value={0} unit="Open Issue(s)"/>
+            //     </div>
+            // </div>
         )
     }
 }

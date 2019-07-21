@@ -18,7 +18,7 @@ class App extends Component {
         <Header size='24' align='left'>Enemies</Header>
         <ClanWrapper clan={CLANS.VUE} />
         <ClanWrapper clan={CLANS.ANGULAR} />
-        <VotersWrapper />
+        {/* <VotersWrapper clan={CLANS.REACT}/> */}
       </div>
     );
   }

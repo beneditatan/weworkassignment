@@ -13,12 +13,12 @@ class ClanVoter extends Component {
             <div>
                 <div className='row'>
                     <div className='col-md-4 offset-4' align='center'>
-                        <VoterImage />
+                        <VoterImage imgSrc={this.props.imgSrc}/>
                     </div>
                 </div>
                 <div className='row'>
                     <div className='col-md-12' align='center'>
-                        <h5>voter name</h5>
+                        <a href={this.props.url}>{this.props.login}</a>
                     </div>
                 </div>
             </div>
