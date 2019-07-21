@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/clan-war/static/css/main.34de6062.chunk.css",
+    "main.js": "/clan-war/static/js/main.b3ad26d3.chunk.js",
+    "main.js.map": "/clan-war/static/js/main.b3ad26d3.chunk.js.map",
+    "runtime~main.js": "/clan-war/static/js/runtime~main.85d568ae.js",
+    "runtime~main.js.map": "/clan-war/static/js/runtime~main.85d568ae.js.map",
+    "static/css/2.22a7d4ef.chunk.css": "/clan-war/static/css/2.22a7d4ef.chunk.css",
+    "static/js/2.9d9ee668.chunk.js": "/clan-war/static/js/2.9d9ee668.chunk.js",
+    "static/js/2.9d9ee668.chunk.js.map": "/clan-war/static/js/2.9d9ee668.chunk.js.map",
+    "index.html": "/clan-war/index.html",
+    "precache-manifest.05258371020938e22c3ac59b611337f8.js": "/clan-war/precache-manifest.05258371020938e22c3ac59b611337f8.js",
+    "service-worker.js": "/clan-war/service-worker.js",
+    "static/css/2.22a7d4ef.chunk.css.map": "/clan-war/static/css/2.22a7d4ef.chunk.css.map",
+    "static/css/main.34de6062.chunk.css.map": "/clan-war/static/css/main.34de6062.chunk.css.map"
+  }
+}
