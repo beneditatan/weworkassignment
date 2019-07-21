@@ -6,8 +6,8 @@ export const CLANS = {
 
 export const CLANS_DESCRIPTION = {
     [CLANS.REACT]: "A declarative efficient and flexible javascript",
-    [CLANS.VUE]: "Vue description",
-    [CLANS.ANGULAR]: "Angular description"
+    [CLANS.VUE]: "A progressive framework for building user interfaces.",
+    [CLANS.ANGULAR]: "A TypeScript-based open-source web application framework "
 }
 
 export const CLANS_IMAGE = {

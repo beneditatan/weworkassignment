@@ -6,10 +6,6 @@ import StatItem from '../components/stat-item'
 import { CLANS } from '../constants/clans'
 
 class ClanStat extends Component {
-    constructor(props){
-        super(props);
-    }
-
     componentDidMount(){
         this.props.fetchReactStat();
         this.props.fetchVueStat();

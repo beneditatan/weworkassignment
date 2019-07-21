@@ -31,12 +31,10 @@ class VotersWrapper extends Component {
                         break;
                     default:
                         console.log("invalid clan")
-                }
-                
+                }  
             }
         }
       }
-
     generateItems(stargazers){
         const items = _.map(stargazers, (gazer, index) => 
             <div className='col-md-4' key={index} data-testid='clan-voter'>
@@ -62,9 +60,9 @@ class VotersWrapper extends Component {
 
         return (
             <div className='row' style={divStyle}
-            onScroll={this.handleScroll} 
-            ref={(scroller) => {this.scroller = scroller}}
-            id='voter-wrapper'>
+                onScroll={this.handleScroll} 
+                ref={(scroller) => {this.scroller = scroller}}
+                id='voter-wrapper'>
                 <div className='col-md-12' align='center'>
                     <h2>{this.props.clan[0].toUpperCase() + this.props.clan.substr(1)} Stargazers</h2>
                 </div>

@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class Header extends Component {
-    static propTypes = {
-        size: PropTypes.string,
-        align: PropTypes.string
-    }
-
     render() {
         const { size, align, children } = this.props;
         

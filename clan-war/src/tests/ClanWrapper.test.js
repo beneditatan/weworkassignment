@@ -21,6 +21,12 @@ const stargazers = [
     avatar_url: 'http://cdn.shopify.com/s/files/1/1116/9250/products/PelvicSet_Enchantment_505_grande.jpg?v=1522254052'
   }
 ]
+
+const clanStargazers = {
+  users: stargazers,
+  page: 0
+}
+
 afterEach(cleanup);
 
 it('ClanWrapper renders without crashing', () => {
@@ -28,7 +34,7 @@ it('ClanWrapper renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <Provider store={createStoreWithMiddleware(rootReducer)}>
-      <ClanWrapper clan={clan} clanStargazers={stargazers}/>
+      <ClanWrapper clan={clan} clanStargazers={clanStargazers}/>
     </Provider>
     , div);
   ReactDOM.unmountComponentAtNode(div);
@@ -40,7 +46,7 @@ it('ClanWrapper rendered with the correct styling', () => {
     const marginTop = '10px'
     const { container } = render(
       <Provider store={createStoreWithMiddleware(rootReducer)}>
-        <ClanWrapper clan={clan} clanStargazers={stargazers}/>
+        <ClanWrapper clan={clan} clanStargazers={clanStargazers}/>
       </Provider>);
 
     expect(container.firstChild).toHaveStyle(`textAlign: ${align};`);
@@ -51,7 +57,7 @@ it('ClanWrapper contains ClanCard', () => {
     const clan = CLANS.REACT;
     const { container } = render(
       <Provider store={createStoreWithMiddleware(rootReducer)}>
-        <ClanWrapper clan={clan} clanStargazers={stargazers}/>
+        <ClanWrapper clan={clan} clanStargazers={clanStargazers}/>
       </Provider>);
     const clanCardNode = container.querySelector('ClanCard');
     

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
 import Header from './components/header';
 import ClanWrapper from './components/clan-wrapper';
 import { CLANS } from './constants/clans';
@@ -10,19 +8,6 @@ import { fetchReactStargazers,  fetchVueStargazers, fetchAngularStargazers} from
 
 
 class App extends Component {
-  constructor(props){
-    super(props);
-
-    this.handleScroll = this.handleScroll.bind(this)
-    
-  }
-
-  handleScroll(){
-    if(this.scroller){
-        console.log(this.scroller.scrollTop)
-    }
-  }
-
   componentDidMount(){
     this.props.fetchReactStargazers(this.props.reactStargazers.page);
     this.props.fetchVueStargazers(this.props.vueStargazers.page);

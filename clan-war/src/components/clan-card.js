@@ -17,6 +17,7 @@ class ClanCard extends Component {
     }
     
     toggleOverview() {
+        // show stargazers when overview is false
         this.setState(state => ({
             overview: !state.overview
         }));

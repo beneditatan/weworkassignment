@@ -39,11 +39,7 @@ it('ClanImage rendered with the correct styling', () => {
       <ClanImage clan={clan}/>
     </Provider>);
 
-  // make sure its square
-  // const height = container.firstChild.offsetWidth;
-
   expect(container.firstChild).toHaveStyle(`width: ${width};`);
-  // expect(container.firstChild).toHaveStyle(`height: ${height};`);
   expect(container.firstChild).toHaveStyle(`overflow: ${overflow};`);
   expect(container.firstChild).toHaveStyle(`marginTop: ${marginTop};`);
   expect(container.firstChild).toHaveStyle(`marginTop: ${marginLeft};`);

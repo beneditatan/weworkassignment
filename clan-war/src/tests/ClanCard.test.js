@@ -22,6 +22,11 @@ const stargazers = [
   }
 ]
 
+const clanStargazers = {
+  users: stargazers,
+  page: 0
+}
+
 afterEach(cleanup);
 
 it('ClanCard renders without crashing', () => {
@@ -29,7 +34,7 @@ it('ClanCard renders without crashing', () => {
   const clan = CLANS.REACT;
   ReactDOM.render(
     <Provider store={createStoreWithMiddleware(rootReducer)}>
-      <ClanCard clan={clan}/>
+      <ClanCard clan={clan} clanStargazers={clanStargazers}/>
     </Provider>
     , div);
   ReactDOM.unmountComponentAtNode(div);
@@ -43,7 +48,7 @@ it('ClanCard rendered with the correct styling', () => {
   const marginRight = '10px';
   const { container } = render(
     <Provider store={createStoreWithMiddleware(rootReducer)}>
-      <ClanCard clan={clan}/>
+      <ClanCard clan={clan} clanStargazers={clanStargazers}/>
     </Provider>);
 
   expect(container.firstChild).toHaveStyle(`border: ${border};`);
@@ -56,7 +61,7 @@ it('ClanCard contains ClanStat', () => {
   const clan = CLANS.REACT;
   const { container } = render(
     <Provider store={createStoreWithMiddleware(rootReducer)}>
-      <ClanCard clan={clan}/>
+      <ClanCard clan={clan} clanStargazers={clanStargazers}/>
     </Provider>);
   const clanStatNode = container.querySelector('ClanStat');
   
@@ -67,7 +72,7 @@ it('ClanCard contains ClanImage', () => {
   const clan = CLANS.REACT;
   const { container } = render(
     <Provider store={createStoreWithMiddleware(rootReducer)}>
-      <ClanCard clan={clan}/>
+      <ClanCard clan={clan} clanStargazers={clanStargazers}/>
     </Provider>);
   const clanImageNode = container.querySelector('ClanImage');
   
