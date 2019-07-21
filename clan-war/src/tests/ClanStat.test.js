@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import ClanStat from '../containers/clan-stat';
 import { CLANS } from '../constants/clans'
 
+import {
+  render,
+  cleanup,
+} from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from '../reducers';
@@ -18,4 +24,16 @@ it('ClanStat renders without crashing', () => {
     </Provider>
     , div);
   ReactDOM.unmountComponentAtNode(div);
+});
+
+it('ClanStat renders with 3 StatItems', () => {
+  const clan = CLANS.REACT;
+  const { container } = render(
+    <Provider store={createStoreWithMiddleware(rootReducer)}>
+      <ClanStat clan={clan}/>
+    </Provider>);
+
+  const statItemNodes = container.querySelectorAll('StatItem');
+
+  expect(statItemNodes.length).toBe(3)
 });

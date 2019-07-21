@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
 
-import { reactStat, vueStat, angularStat } from './clan-stat.reducer'
+import { reactStat, angularStat, vueStat 
+    // clanStargazers 
+} from './app.reducer'
 
 const rootReducer = combineReducers({
-    reactStat,
-    vueStat,
-    angularStat
+    reactStat, angularStat, vueStat,
+    // clanStargazers
 });
 
 export default rootReducer;

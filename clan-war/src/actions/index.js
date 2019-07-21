@@ -1,1 +1,1 @@
-export * from './clan-stat.action';
+export * from './app.action';

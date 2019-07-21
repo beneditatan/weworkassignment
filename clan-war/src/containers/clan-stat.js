@@ -22,50 +22,53 @@ class ClanStat extends Component {
                 this.props.fetchAngularStat();
                 break;
             default:
+                console.log("invalid clan")
                 break;
         }
+        
     }
     
-
     render () {
-        
         switch(this.props.clan){
             case CLANS.REACT:
-                var { stargazers_count, forks_count, open_issues_count } = this.props.reactStat;
+                var clanStat =  this.props.reactStat;
                 break;
             case CLANS.VUE:
-                var { stargazers_count, forks_count, open_issues_count } = this.props.vueStat;
+                var clanStat =  this.props.vueStat;
                 break;
             case CLANS.ANGULAR:
-                var { stargazers_count, forks_count, open_issues_count } = this.props.angularStat;
+                var clanStat =  this.props.angularStat;
                 break;
             default:
+                console.log("invalid clan")
                 break;
         }
+        
 
         return (
             <div className='row'>
                 <div className='col-md-4'>
-                    <StatItem value={stargazers_count} unit="Stargazer(s)"/>
+                    <StatItem value={clanStat.stargazers_count} 
+                    unit="Stargazer(s)"/>
                 </div>
                 <div className='col-md-4'>
-                    <StatItem value={forks_count} unit="Fork(s)"/>
+                    <StatItem value={clanStat.forks_count} unit="Fork(s)"/>
                 </div>
                 <div className='col-md-4'>
-                    <StatItem value={open_issues_count} unit="Open Issue(s)"/>
+                    <StatItem value={clanStat.open_issues_count} unit="Open Issue(s)"/>
                 </div>
             </div>
         )
     }
 }
 
-
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ fetchReactStat,  fetchVueStat, fetchAngularStat}, dispatch);
-}
+    return bindActionCreators({ fetchReactStat, fetchVueStat, fetchAngularStat}, dispatch);
+  }
 
-function mapStateToProps({ reactStat, vueStat, angularStat }){
-  return { reactStat, vueStat, angularStat };
-}
-
+function mapStateToProps({ reactStat, angularStat, vueStat }){
+    return { reactStat, angularStat, vueStat };
+  }
+  
 export default connect(mapStateToProps, mapDispatchToProps)(ClanStat);
+
