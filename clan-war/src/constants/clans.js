@@ -23,7 +23,7 @@ export const CLANS_GITHUB_URL = {
 }
 
 export const CLANS_STARGAZERS = {
-    [CLANS.REACT]: "https://api.github.com/repos/facebook/react/stargazers",
-    [CLANS.VUE]: "https://api.github.com/repos/vuejs/vue/stargazers",
-    [CLANS.ANGULAR]: "https://api.github.com/repos/angular/angular/stargazers"
+    [CLANS.REACT]: "https://api.github.com/repos/facebook/react/stargazers?per_page=12",
+    [CLANS.VUE]: "https://api.github.com/repos/vuejs/vue/stargazers?per_page=12",
+    [CLANS.ANGULAR]: "https://api.github.com/repos/angular/angular/stargazers?per_page=12"
 }

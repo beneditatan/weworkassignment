@@ -8,17 +8,23 @@ class ClanVoter extends Component {
     }
 
     render (){
-
+        const divStyle = {
+            marginBottom: '20px',
+            
+        }
+        const fontStyle = {
+            color: '#4A4A48'
+        }
         return (
-            <div>
-                <div className='row'>
+            <div style={divStyle}>
+                <div className='row' >
                     <div className='col-md-4 offset-4' align='center'>
-                        <VoterImage imgSrc={this.props.imgSrc}/>
+                        <VoterImage imgSrc={this.props.imgSrc} url={this.props.url}/>
                     </div>
                 </div>
                 <div className='row'>
                     <div className='col-md-12' align='center'>
-                        <a href={this.props.url}>{this.props.login}</a>
+                        <a href={this.props.url} style={fontStyle}>{this.props.login}</a>
                     </div>
                 </div>
             </div>

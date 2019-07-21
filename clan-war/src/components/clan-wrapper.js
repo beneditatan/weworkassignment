@@ -26,10 +26,10 @@ class ClanWrapper extends Component {
         }
         return (
             <div style={divStyle} data-testid='div-wrapper' onClick={this.toggleOverview}>
-                {this.state.overview ? 
                 <ClanCard clan={this.props.clan}
-                data-testid='clan-card'/> : <VotersWrapper clan={this.props.clan}/>}
-                
+                data-testid='clan-card' overview={this.state.overview}
+                clanStargazers={this.props.clanStargazers}
+                />
             </div>
         )
     }

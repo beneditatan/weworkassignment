@@ -61,8 +61,8 @@ export const fetchAngularStat = () => {
     }
 }
 
-export const fetchReactStargazers = () => {
-    const url = CLANS_STARGAZERS[CLANS.REACT]
+export const fetchReactStargazers = (page) => {
+    const url = `${CLANS_STARGAZERS[CLANS.REACT]}&page=${page}`;
     const request = axios.get(url);
 
     console.log(`[GET] FETCH REACT STARGAZERS: ${request}`);
@@ -73,8 +73,8 @@ export const fetchReactStargazers = () => {
     }
 }
 
-export const fetchVueStargazers = () => {
-    const url = CLANS_STARGAZERS[CLANS.VUE]
+export const fetchVueStargazers = (page) => {
+    const url = `${CLANS_STARGAZERS[CLANS.VUE]}&page=${page}`;
     const request = axios.get(url);
 
     console.log(`[GET] FETCH VUE STARGAZERS: ${request}`);
@@ -85,8 +85,8 @@ export const fetchVueStargazers = () => {
     }
 }
 
-export const fetchAngularStargazers = () => {
-    const url = CLANS_STARGAZERS[CLANS.ANGULAR]
+export const fetchAngularStargazers = (page) => {
+    const url = `${CLANS_STARGAZERS[CLANS.ANGULAR]}&page=${page}`;
     const request = axios.get(url);
 
     console.log(`[GET] FETCH ANGULAR STARGAZERS: ${request}`);

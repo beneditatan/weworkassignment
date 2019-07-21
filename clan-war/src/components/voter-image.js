@@ -25,7 +25,10 @@ class VoterImage extends Component {
 
         return (
             <div style={divStyle}>
-                <img src={this.props.imgSrc} style={imgStyle}></img>
+                <a href={this.props.url}>
+                    <img src={this.props.imgSrc} style={imgStyle}></img>
+                </a>
+                
             </div>
         )
     }

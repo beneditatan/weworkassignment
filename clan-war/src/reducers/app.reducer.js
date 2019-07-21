@@ -16,13 +16,26 @@ const statInitialData = {
     open_issues_count: 0
 }
 
-const stargazersInitialData = {
+const reactStargazersInitialData = {
     users: [],
     page: 0,
     loading: false,
     prevY: 0
 }
 
+const vueStargazersInitialData = {
+    users: [],
+    page: 0,
+    loading: false,
+    prevY: 0
+}
+
+const angularStargazersInitialData = {
+    users: [],
+    page: 0,
+    loading: false,
+    prevY: 0
+}
 export const reactStat = (state=statInitialData, action) => {
     switch(action.type) {
         case FETCH_REACT_STAT:
@@ -53,7 +66,7 @@ export const angularStat = (state=statInitialData, action) => {
     }
 }
 
-export const reactStargazers = (state=stargazersInitialData, action) => {
+export const reactStargazers = (state=reactStargazersInitialData, action) => {
     switch(action.type) {
         case FETCH_REACT_STARGAZERS:
             // const users = _.forEach(action.payload.data, (user) => {
@@ -61,12 +74,16 @@ export const reactStargazers = (state=stargazersInitialData, action) => {
             //     return { login, url, avatar_url };
             // })
 
+            console.log(action.payload)
+
             const newState = {
                 users: action.payload.data,
-                page: state.page,
-                loading: state.loading,
+                page: ++state.page,
+                loading: true,
                 prevY: state.prevY
             }
+
+            console.log(newState)
 
             return newState;
 
@@ -75,7 +92,7 @@ export const reactStargazers = (state=stargazersInitialData, action) => {
     }
 }
 
-export const vueStargazers = (state=stargazersInitialData, action) => {
+export const vueStargazers = (state=vueStargazersInitialData, action) => {
     switch(action.type) {
         case FETCH_VUE_STARGAZERS:
             // const users = _.forEach(action.payload.data, (user) => {
@@ -85,11 +102,12 @@ export const vueStargazers = (state=stargazersInitialData, action) => {
 
             const newState = {
                 users: action.payload.data,
-                page: state.page,
-                loading: state.loading,
+                page: ++state.page,
+                loading: true,
                 prevY: state.prevY
             }
 
+            console.log(newState)
             return newState;
 
         default:
@@ -97,7 +115,7 @@ export const vueStargazers = (state=stargazersInitialData, action) => {
     }
 }
 
-export const angularStargazers = (state=stargazersInitialData, action) => {
+export const angularStargazers = (state=angularStargazersInitialData, action) => {
     switch(action.type) {
         case FETCH_ANGULAR_STARGAZERS:
                // const users = _.forEach(action.payload.data, (user) => {
@@ -107,11 +125,11 @@ export const angularStargazers = (state=stargazersInitialData, action) => {
 
             const newState = {
                 users: action.payload.data,
-                page: state.page,
-                loading: state.loading,
+                page: ++state.page,
+                loading: true,
                 prevY: state.prevY
             }
-
+            
             return newState;
 
         default:

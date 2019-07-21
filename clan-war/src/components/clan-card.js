@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ClanStat from '../containers/clan-stat'
 import ClanImage from './clan-image'
+import VotersWrapper from './voters-wrapper'
 import { CLANS_DESCRIPTION } from '../constants/clans';
 
 class ClanCard extends Component {
@@ -12,7 +13,7 @@ class ClanCard extends Component {
         const divStyle = {
             'border': '1px',
             'borderStyle': 'solid',
-            'marginLeft': '10px',
+            'marginLeft': '25px',
             'marginRight': '10px',
             'backgroundColor': '#F1F2EB'
         }
@@ -40,6 +41,11 @@ class ClanCard extends Component {
                         </div>
                     </div>
                     
+                </div>
+                <div className='row' hidden={this.props.overview}>
+                    <div className='col-md-12'>
+                        <VotersWrapper clan={this.props.clan} clanStargazers={this.props.clanStargazers}/>
+                    </div>
                 </div>
                 <div className='row'>
                     <div className='col-md-12'>
