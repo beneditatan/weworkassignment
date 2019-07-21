@@ -5,7 +5,6 @@ import _ from 'lodash';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchReactStargazers,  fetchVueStargazers, fetchAngularStargazers} from '../actions';
-import InfiniteScroll from 'react-simple-infinite-scroll'
 
 class VotersWrapper extends Component {
     constructor(props) {
@@ -80,8 +79,5 @@ function mapDispatchToProps(dispatch){
     return bindActionCreators({ fetchReactStargazers,  fetchVueStargazers, fetchAngularStargazers}, dispatch);
   }
 
-// function mapStateToProps({ reactStargazers, vueStargazers, angularStargazers }){
-//     return { reactStargazers, vueStargazers, angularStargazers };
-// }
 
 export default connect(null, mapDispatchToProps)(VotersWrapper);
